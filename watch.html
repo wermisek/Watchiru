@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Anime - AniStream</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="watch.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html" class="logo">AniStream</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#">My List</a>
+                    <a href="#">Browse</a>
+                    <a href="#">New & Popular</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bell"></i>
+                <div class="user-profile">
+                    <img src="profile.jpg" alt="Profile">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="watch-container">
+        <div class="video-info">
+            <h1 id="anime-title">Loading...</h1>
+        </div>
+
+        <div class="video-player-wrapper">
+            <div class="video-player">
+                <video id="anime-player" controls>
+                    <source src="vid/S1 - 01.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="video-details">
+            <div class="left-column">
+                <div class="anime-info">
+                    <div class="info-header">
+                        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan" class="anime-poster">
+                        <div class="header-details">
+                            <div class="title-section">
+                                <h2>Attack on Titan</h2>
+                                <div class="title-meta">
+                                    <span class="type">TV Series</span>
+                                    <span class="year">2013</span>
+                                    <span class="status">Completed</span>
+                                </div>
+                            </div>
+                            <div class="meta-info">
+                                <div class="meta-item">
+                                    <span class="label">Episodes:</span>
+                                    <span class="value">6/25</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="label">Duration:</span>
+                                    <span class="value">24m per ep</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="label">Quality:</span>
+                                    <span class="value">HD</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="label">Audio:</span>
+                                    <span class="value">English</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="label">Subtitles:</span>
+                                    <span class="value">No subtitles</span>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                <span>Action</span>
+                                <span>Dark Fantasy</span>
+                                <span>Drama</span>
+                                <span>Mystery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="synopsis">
+                        <h3>Synopsis</h3>
+                        <p>Centuries ago, mankind was slaughtered to near extinction by monstrous humanoid creatures called Titans, forcing humans to hide in fear behind enormous concentric walls. What makes these giants truly terrifying is that their taste for human flesh is not born out of hunger but what appears to be out of pleasure.</p>
+                    </div>
+                </div>
+                
+                <div class="episode-list">
+                    <div class="episode-header">
+                        <h3>Episodes</h3>
+                        <div class="episode-filters">
+                            <button class="active">All</button>
+                            <button>Dub</button>
+                            <button>Sub</button>
+                        </div>
+                    </div>
+                    <div class="episode-grid">
+                        <!-- Episodes will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="watch-more">
+                    <h3>You might also like</h3>
+                    <div class="anime-recommendations">
+                        <a href="#" class="recommendation-item">
+                            <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" alt="Attack on Titan Season 2">
+                            <div class="recommendation-info">
+                                <h4>Attack on Titan Season 2</h4>
+                                <div class="rec-meta">
+                                    <span>TV</span>
+                                    <span>12 EP</span>
+                                    <span>2017</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="recommendation-item">
+                            <img src="https://cdn.myanimelist.net/images/anime/1173/92110.jpg" alt="Attack on Titan Season 3">
+                            <div class="recommendation-info">
+                                <h4>Attack on Titan Season 3</h4>
+                                <div class="rec-meta">
+                                    <span>TV</span>
+                                    <span>12 EP</span>
+                                    <span>2018</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="watch.js"></script>
+</body>
+</html>
