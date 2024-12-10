@@ -1,13 +1,13 @@
-// Update the movies data with anime titles
+// Update the movies data with anime titles and IDs
 const movies = [
     { 
-        id: 1, 
+        id: 'attack-on-titan',
         image: 'https://cdn.myanimelist.net/images/anime/1948/120625.jpg', 
         title: 'Attack on Titan',
         category: 'Shonen'
     },
     { 
-        id: 2, 
+        id: 'demon-slayer',
         image: 'https://cdn.myanimelist.net/images/anime/1286/99889.jpg', 
         title: 'Demon Slayer',
         category: 'Shonen'
@@ -60,9 +60,9 @@ function createMovieElement(movie) {
         </div>
     `;
     
-    // Add click handler for the entire movie card - updated to go to watch.html
+    // Use the id instead of the title for the URL
     movieElement.addEventListener('click', () => {
-        window.location.href = `watch.html?anime=${encodeURIComponent(movie.title)}`;
+        window.location.href = `watch.html?anime=${movie.id}`;
     });
     
     movieElement.appendChild(movieInfo);
