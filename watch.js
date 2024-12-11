@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Update page title and main title
-    document.title = `${anime.title} - AniStream`;
+    document.title = `${anime.title} - Watchiru`;
     document.getElementById('anime-title').textContent = `${anime.title} - Episode 1`;
 
     // Update anime info

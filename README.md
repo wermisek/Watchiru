@@ -7,7 +7,7 @@
 
 
 ```markdown
-# 🎬 AniStream
+# 🎬 Watchiru
 
 A modern, sleek anime streaming platform built with HTML, CSS, and JavaScript.
 
@@ -29,7 +29,7 @@ A modern, sleek anime streaming platform built with HTML, CSS, and JavaScript.
 
 ## 📁 Project Structure
 
-anistream/
+Watchiru/
 ├── index.html
 ├── watch.html
 ├── styles.css
