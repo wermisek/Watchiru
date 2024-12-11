@@ -308,3 +308,29 @@ header {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.season-selector {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.season-btn {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;  /* Remove underline from link */
+    font-size: 0.9rem;
+}
+
+.season-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.season-btn.active {
+    background: #0066ff;
+}

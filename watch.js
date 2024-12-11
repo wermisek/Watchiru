@@ -154,6 +154,82 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitles: 'No subtitles',
             genres: ['Action', 'Dark Fantasy', 'Drama', 'Mystery']
         },
+        'attack-on-titan-2': {
+            title: 'Attack on Titan Season 2',
+            episodes: [
+                {
+                    id: 1,
+                    file: 'https://streamtape.com/e/D4yOgARqo2CkyRk/S2_-_01.mp4',
+                    title: 'Beast Titan'
+                },
+                {
+                    id: 2,
+                    file: 'https://streamtape.com/e/zlmXroOBrzsY3qe/S2_-_02.mp4',
+                    title: 'I\'m Home'
+                },
+                {
+                    id: 3,
+                    file: 'https://streamtape.com/e/qg7pRXkQWKiz249/S2_-_03.mp4',
+                    title: 'Southwestward'
+                },
+                {
+                    id: 4,
+                    file: 'https://streamtape.com/e/wzb0WmB8lgTJ9yJ/S2_-_04.mp4',
+                    title: 'Soldier'
+                },
+                {
+                    id: 5,
+                    file: 'https://streamtape.com/e/mrPPyv4MXXSXKM/S2_-_05.mp4',
+                    title: 'Historia'
+                },
+                {
+                    id: 6,
+                    file: 'https://streamtape.com/e/orP2x3pMM6s9Gy/S2_-_06.mp4',
+                    title: 'Warrior'
+                },
+                {
+                    id: 7,
+                    file: 'https://streamtape.com/e/jWgAa2L49GUz81z/S2_-_07.mp4',
+                    title: 'Close Combat'
+                },
+                {
+                    id: 8,
+                    file: 'https://streamtape.com/e/rJRWexOjO2ub273/S2_-_08.mp4',
+                    title: 'The Hunters'
+                },
+                {
+                    id: 9,
+                    file: 'https://streamtape.com/e/2aLoj83JR6SQK0/S2_-_09.mp4',
+                    title: 'Opening'
+                },
+                {
+                    id: 10,
+                    file: 'https://streamtape.com/e/qW6BeMMAPrszzbp/S2_-_10.mp4',
+                    title: 'Children'
+                },
+                {
+                    id: 11,
+                    file: 'https://streamtape.com/e/roPGgDglxZIbpLO/S2_-_11.mp4',
+                    title: 'Charge'
+                },
+                {
+                    id: 12,
+                    file: 'https://streamtape.com/e/26bgrPOZL3uZdPw/S2_-_12.mp4',
+                    title: 'Scream'
+                }
+            ],
+            poster: 'https://cdn.myanimelist.net/images/anime/4/84177.jpg',
+            synopsis: 'The story continues as the Survey Corps discovers more about the Titans and the secrets of the walls.',
+            year: 2017,
+            type: 'TV Series',
+            status: 'Completed',
+            totalEpisodes: 12,
+            duration: '24m per ep',
+            quality: 'HD',
+            audio: 'Japanese',
+            subtitles: 'English',
+            genres: ['Action', 'Dark Fantasy', 'Drama', 'Mystery']
+        },
         'demon-slayer': {
             title: 'Demon Slayer',
             episodes: [
