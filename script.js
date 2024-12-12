@@ -121,3 +121,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 }); 
+async function fetchAnimeData() {
+    try {
+        // Fetch both popular and upcoming anime concurrently
+        const [popularResponse, upcomingResponse] = await Promise.all([
+            fetch('https://api.jikan.moe/v4/top/anime?filter=airing'),
+            fetch('https://api.jikan.moe/v4/top/anime?filter=upcoming')
+        ]);
+
+        const popularData = await popularResponse.json();
+        const upcomingData = await upcomingResponse.json();
+
+        // Validate responses and get data
+        const popularAnimes = popularData?.data?.slice(0, 10) || []; // Top 10 popular airing
+        const incomingAnimes = upcomingData?.data?.slice(0, 10) || []; // Top 10 upcoming
+
+        // Display in respective sections
+        displayAnimeList(popularAnimes, '.popular-animes');
+        displayAnimeList(incomingAnimes, '.incoming-animes');
+    } catch (error) {
+        console.error('Error fetching anime data:', error);
+    }
+}
+
+function displayAnimeList(animeList, containerSelector) {
+    const container = document.querySelector(containerSelector);
+
+    if (!container) {
+        console.error(`Container not found: ${containerSelector}`);
+        return;
+    }
+
+    container.innerHTML = animeList.map(anime => `
+        <div class="movie-item" onclick="window.location.href='watch.html?anime=${anime.mal_id}'" style="background-image: url('${anime.images.jpg.image_url}'); background-size: cover; background-position: center;">
+            <div class="movie-info">
+                <h3>${anime.title}</h3>
+                <span>${anime.type || 'Unknown'}</span>
+                <span>${anime.aired?.string || 'TBA'}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Initialize fetching when DOM is loaded
+document.addEventListener('DOMContentLoaded', fetchAnimeData);
+

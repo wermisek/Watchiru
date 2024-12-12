@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get anime ID from URL and convert to lowercase for consistency
-    const urlParams = new URLSearchParams(window.location.search);
-    let animeId = urlParams.get('anime');
-    
-    // Convert spaces to dashes and make lowercase
-    if (animeId) {
-        animeId = animeId.toLowerCase().replace(/\s+/g, '-');
-    } else {
-        animeId = 'attack-on-titan'; // default
-    }
-    
-    console.log('Loading anime:', animeId); // Debug log
+    // Existing code to get the anime ID from URL
+const urlParams = new URLSearchParams(window.location.search);
+let animeId = urlParams.get('anime');
+
+// Normalize the anime ID
+if (animeId) {
+    animeId = animeId.toLowerCase().replace(/\s+/g, '-');
+} else {
+    animeId = 'attack-on-titan'; // default to Season 1
+}
+
+console.log('Loading anime:', animeId);
 
     const animeDatabase = {
         'attack-on-titan': {
@@ -230,6 +231,48 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitles: 'English',
             genres: ['Action', 'Dark Fantasy', 'Drama', 'Mystery']
         },
+        'attack-on-titan-3': {
+    title: 'Attack on Titan Season 3',
+    episodes: [
+        {
+            id: 1,
+            file: 'https://streamtape.com/e/abc123/S3_-_01.mp4',
+            title: 'Smoke Signal'
+        },
+        {
+            id: 2,
+            file: 'https://streamtape.com/e/def456/S3_-_02.mp4',
+            title: 'Pain'
+        },
+        {
+            id: 3,
+            file: 'https://streamtape.com/e/ghi789/S3_-_03.mp4',
+            title: 'Old Story'
+        },
+        {
+            id: 4,
+            file: 'https://streamtape.com/e/jkl012/S3_-_04.mp4',
+            title: 'Trust'
+        },
+        {
+            id: 5,
+            file: 'https://streamtape.com/e/mno345/S3_-_05.mp4',
+            title: 'Reply'
+        },
+        // Continue adding episodes up to episode 22
+    ],
+    poster: 'https://cdn.myanimelist.net/images/anime/1173/92110.jpg',
+    synopsis: 'After barely surviving Eren\'s recovery, a rising threat from the shadows puts humanity in danger once more.',
+    year: 2018,
+    type: 'TV Series',
+    status: 'Completed',
+    totalEpisodes: 22,
+    duration: '24m per ep',
+    quality: 'HD',
+    audio: 'Japanese',
+    subtitles: 'English',
+    genres: ['Action', 'Military', 'Mystery', 'Super Power', 'Drama', 'Fantasy']
+},
         'demon-slayer': {
             title: 'Demon Slayer',
             episodes: [
