@@ -1,53 +1,42 @@
 // Update the movies data with anime titles and IDs
 const movies = [
-    { 
+    {
+        id: 'bleach',
+        image: 'https://cdn.myanimelist.net/images/anime/3/40451.jpg',
+        title: 'Bleach',
+        category: 'Shounen'
+    },
+    {
         id: 'attack-on-titan',
-        image: 'https://cdn.myanimelist.net/images/anime/1948/120625.jpg', 
+        image: 'https://cdn.myanimelist.net/images/anime/10/47347.jpg',
         title: 'Attack on Titan',
-        category: 'Shonen'
+        category: 'Shounen'
     },
-    { 
+    {
         id: 'demon-slayer',
-        image: 'https://cdn.myanimelist.net/images/anime/1286/99889.jpg', 
+        image: 'https://cdn.myanimelist.net/images/anime/1286/99889.jpg',
         title: 'Demon Slayer',
-        category: 'Shonen'
-    },
-    {
-        id: 3,
-        image: 'https://cdn.myanimelist.net/images/anime/10/78745.jpg',
-        title: 'My Hero Academia',
-        category: 'Shonen'
-    },
-    {
-        id: 4,
-        image: 'https://cdn.myanimelist.net/images/anime/1171/109222.jpg',
-        title: 'Jujutsu Kaisen',
-        category: 'Shonen'
-    },
-    {
-        id: 5,
-        image: 'https://cdn.myanimelist.net/images/anime/12/76049.jpg',
-        title: 'One Punch Man',
-        category: 'Action'
-    },
-    {
-        id: 6,
-        image: 'https://cdn.myanimelist.net/images/anime/9/9453.jpg',
-        title: 'Death Note',
-        category: 'Psychological'
+        category: 'Shounen'
     }
 ];
+
+// Map MAL IDs to local IDs
+const idMap = {
+    269: 'bleach',
+    16498: 'attack-on-titan',
+    38000: 'demon-slayer'
+};
 
 // Create movie element
 function createMovieElement(movie) {
     const movieElement = document.createElement('div');
     movieElement.classList.add('movie-item');
-    
+
     // Set background image
     movieElement.style.backgroundImage = `url(${movie.image})`;
     movieElement.style.backgroundSize = 'cover';
     movieElement.style.backgroundPosition = 'center';
-    
+
     // Create movie info
     const movieInfo = document.createElement('div');
     movieInfo.classList.add('movie-info');
@@ -59,12 +48,12 @@ function createMovieElement(movie) {
             <button class="add-to-list"><i class="fas fa-plus"></i></button>
         </div>
     `;
-    
+
     // Use the id instead of the title for the URL
     movieElement.addEventListener('click', () => {
         window.location.href = `watch.html?anime=${movie.id}`;
     });
-    
+
     movieElement.appendChild(movieInfo);
     return movieElement;
 }
@@ -72,16 +61,16 @@ function createMovieElement(movie) {
 // Initial population of movies
 function populateMovies() {
     const moviesSliders = document.querySelectorAll('.movies-slider');
-    
+
     if (moviesSliders.length === 0) {
         console.error('No movie sliders found');
         return;
     }
-    
+
     moviesSliders.forEach(slider => {
         // Clear existing content
         slider.innerHTML = '';
-        
+
         // Add all movies
         movies.forEach(movie => {
             const movieElement = createMovieElement(movie);
@@ -90,37 +79,7 @@ function populateMovies() {
     });
 }
 
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, populating movies...');
-    populateMovies();
-    
-    // Add category pill click handlers
-    const categoryPills = document.querySelectorAll('.category-pill');
-    categoryPills.forEach(pill => {
-        pill.addEventListener('click', function() {
-            const category = this.textContent.trim();
-            
-            // Update active state
-            categoryPills.forEach(p => p.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Filter and display movies
-            const filteredMovies = category === 'All' 
-                ? movies 
-                : movies.filter(movie => movie.category === category);
-            
-            const moviesSliders = document.querySelectorAll('.movies-slider');
-            moviesSliders.forEach(slider => {
-                slider.innerHTML = '';
-                filteredMovies.forEach(movie => {
-                    const movieElement = createMovieElement(movie);
-                    slider.appendChild(movieElement);
-                });
-            });
-        });
-    });
-}); 
+// Fetch top anime data
 async function fetchAnimeData() {
     try {
         // Fetch both popular and upcoming anime concurrently
@@ -144,6 +103,7 @@ async function fetchAnimeData() {
     }
 }
 
+// Display anime list
 function displayAnimeList(animeList, containerSelector) {
     const container = document.querySelector(containerSelector);
 
@@ -152,17 +112,51 @@ function displayAnimeList(animeList, containerSelector) {
         return;
     }
 
-    container.innerHTML = animeList.map(anime => `
-        <div class="movie-item" onclick="window.location.href='watch.html?anime=${anime.mal_id}'" style="background-image: url('${anime.images.jpg.image_url}'); background-size: cover; background-position: center;">
-            <div class="movie-info">
-                <h3>${anime.title}</h3>
-                <span>${anime.type || 'Unknown'}</span>
-                <span>${anime.aired?.string || 'TBA'}</span>
+    container.innerHTML = animeList.map(anime => {
+        const localId = idMap[anime.mal_id]; // Mapuje mal_id na lokalne ID
+        const watchUrl = localId ? `watch.html?anime=${localId}` : '#'; // Link do strony oglądania
+
+        return `
+            <div class="movie-item" onclick="window.location.href='${watchUrl}'" style="background-image: url('${anime.images.jpg.image_url}'); background-size: cover; background-position: center;">
+                <div class="movie-info">
+                    <h3>${anime.title}</h3>
+                    <span>${anime.type || 'Unknown'}</span>
+                    <span>${anime.aired?.string || 'TBA'}</span>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
-// Initialize fetching when DOM is loaded
-document.addEventListener('DOMContentLoaded', fetchAnimeData);
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, populating movies...');
+    populateMovies();
+    fetchAnimeData();
 
+    // Add category pill click handlers
+    const categoryPills = document.querySelectorAll('.category-pill');
+    categoryPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+            const category = this.textContent.trim();
+
+            // Update active state
+            categoryPills.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+
+            // Filter and display movies
+            const filteredMovies = category === 'All' 
+                ? movies 
+                : movies.filter(movie => movie.category === category);
+
+            const moviesSliders = document.querySelectorAll('.movies-slider');
+            moviesSliders.forEach(slider => {
+                slider.innerHTML = '';
+                filteredMovies.forEach(movie => {
+                    const movieElement = createMovieElement(movie);
+                    slider.appendChild(movieElement);
+                });
+            });
+        });
+    });
+});

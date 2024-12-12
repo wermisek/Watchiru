@@ -293,7 +293,39 @@ console.log('Loading anime:', animeId);
             audio: 'Japanese',
             subtitles: 'English',
             genres: ['Action', 'Supernatural', 'Demons', 'Historical']
+        },
+        'bleach': {
+    title: 'Bleach',
+    episodes: [
+        {
+            id: 1,
+            file: 'https://streamtape.com/e/sample-bleach-episode1',
+            title: 'The Day I Became a Shinigami'
+        },
+        {
+            id: 2,
+            file: 'https://streamtape.com/e/sample-bleach-episode2',
+            title: 'A Shinigami\'s Work'
+        },
+        {
+            id: 3,
+            file: 'https://streamtape.com/e/sample-bleach-episode3',
+            title: 'The Older Brother\'s Wish'
         }
+    ],
+    poster: 'https://cdn.myanimelist.net/images/anime/3/40451.jpg',
+    synopsis: 'Ichigo Kurosaki is an ordinary high schooler—until his family is attacked by a Hollow, a corrupt spirit that seeks to devour human souls. It is then that he meets a Soul Reaper named Rukia Kuchiki...',
+    year: 2004,
+    type: 'TV Series',
+    status: 'Completed',
+    totalEpisodes: 366,
+    duration: '24m per ep',
+    quality: 'HD',
+    audio: 'Japanese',
+    subtitles: 'English',
+    genres: ['Action', 'Adventure', 'Supernatural', 'Shounen']
+}
+
     };
 
     const anime = animeDatabase[animeId];

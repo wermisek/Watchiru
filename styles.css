@@ -1,8 +1,11 @@
 body {
-    background-color: #141414;
+    background-color: #1e2442;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header and Navigation */
@@ -80,7 +83,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 90vh;
+    height: 66vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
                 url('attack_on_titan.JPEG') no-repeat center center;
     background-size: cover;
