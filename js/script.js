@@ -36,7 +36,7 @@ function displayAnimeList(animeList, containerSelector) {
 
     container.innerHTML = uniqueAnimes.map(anime => `
         <div class="movie-item" 
-             onclick="window.location.href='watch.html?anime=${anime.mal_id}&ep=1'"
+             onclick="window.location.href='pages/watch.html?anime=${anime.mal_id}&ep=1'"
              style="background-image: url('${anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url}'); 
                     background-size: cover; 
                     background-position: center;">
@@ -72,7 +72,7 @@ function populateStaticMovies() {
         // Clear existing content
         slider.innerHTML = movies.map(movie => `
             <div class="movie-item" 
-                 onclick="window.location.href='watch.html?anime=${movie.id}&ep=1'"
+                 onclick="window.location.href='pages/watch.html?anime=${movie.id}&ep=1'"
                  style="background-image: url('${movie.image}'); background-size: cover; background-position: center;">
                 <div class="movie-info">
                     <h3>${movie.title}</h3>
@@ -141,7 +141,7 @@ function displayStaticMovies(container) {
     
     container.innerHTML = movies.map(movie => `
         <div class="movie-item" 
-             onclick="window.location.href='watch.html?anime=${movie.id}&ep=1'"
+             onclick="window.location.href='pages/watch.html?anime=${movie.id}&ep=1'"
              style="background-image: url('${movie.image}'); background-size: cover; background-position: center;">
             <div class="movie-info">
                 <h3>${movie.title}</h3>
@@ -162,7 +162,7 @@ function updateHeroSection(anime) {
         const playButton = heroContent.querySelector('.play-btn');
         if (playButton) {
             playButton.onclick = () => {
-                window.location.href = `watch.html?anime=${anime.mal_id || 16498}&ep=1`;
+                window.location.href = `pages/watch.html?anime=${anime.mal_id || 16498}&ep=1`;
             };
         }
     }

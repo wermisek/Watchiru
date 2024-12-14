@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const episodeNumber = parseInt(urlParams.get('ep')) || 1;
 
     if (!malId) {
-        window.location.href = 'browse.html';
+        window.location.href = '/pages/404.html';
         return;
     }
 
@@ -40,10 +40,27 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error('Error loading anime:', error);
         document.querySelector('.watch-container').innerHTML = `
-            <div class="error-message" style="color: white; text-align: center; padding: 2rem;">
-                <h2>Error loading anime</h2>
-                <p>Please try again later</p>
+            <div class="error-message" style="
+                color: white;
+                text-align: center;
+                padding: 4rem 2rem;
+                background: rgba(255,255,255,0.05);
+                border-radius: 12px;
+                margin: 2rem auto;
+                max-width: 600px;
+            ">
+                <h2 style="margin-bottom: 1rem;">Error loading anime</h2>
+                <p style="margin-bottom: 1rem;">Please try again later</p>
                 <p style="color: #ff6b6b;">${error.message}</p>
+                <button onclick="window.location.href='/'" style="
+                    margin-top: 2rem;
+                    padding: 0.8rem 2rem;
+                    background: var(--primary-color);
+                    border: none;
+                    border-radius: 8px;
+                    color: white;
+                    cursor: pointer;
+                ">Back to Home</button>
             </div>
         `;
     }
