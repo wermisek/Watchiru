@@ -1,134 +1,123 @@
+# 🎌 Watchiru
 
+A modern anime streaming platform with a sleek interface and smooth user experience.
 
+## ✨ Key Features
 
+- 🎬 Clean, responsive video player
+- 🔍 Advanced anime search and filtering
+- 📱 Fully responsive design
+- 🌊 Smooth animations and transitions
+- 📺 New & Popular section
+- 🎯 Personalized recommendations
+- 🔔 Notification system
 
+## 🛠️ Tech Stack
 
+- **Frontend:**
+  - HTML5
+  - CSS3 (with modern features)
+  - Vanilla JavaScript
+  - Font Awesome Icons
+  - Google Fonts (Poppins)
 
+## 📂 Project Structure
 
-
-```markdown
-# 🎬 Watchiru
-
-A modern, sleek anime streaming platform built with HTML, CSS, and JavaScript.
-
-## 🌟 Features
-
-- 📺 Clean, responsive video player
-- 📱 Mobile-friendly design
-- 📝 Episode tracking
-- 🎨 Modern UI/UX design
-- 🔍 Detailed anime information
-- 📋 Episode list with easy navigation
-- 💫 Smooth animations and transitions
+```
+Watchiru/
+├── 📄 index.html          # Home page
+├── 📄 browse.html         # Browse anime page
+├── 📄 watch.html          # Video player page
+├── 📄 new-popular.html    # Trending & upcoming anime
+├── 📄 search.html         # Search results page
+├── 🎨 styles.css          # Global styles
+├── 🎨 browse.css          # Browse page styles
+├── 🎨 watch.css           # Video player styles
+├── 🎨 new-popular.css     # New & Popular styles
+├── 🎨 search.css          # Search page styles
+├── 📜 script.js           # Main JavaScript
+├── 📜 watch.js           # Video player logic
+├── 📜 browse.js          # Browse functionality
+├── 📜 new-popular.js     # New & Popular logic
+├── 📜 search.js          # Search functionality
+└── 🖼️ assets/            # Images and icons
+```
 
 ## 🚀 Getting Started
 
-1. Clone the repository
-2. Navigate to the project directory
-3. Open `index.html` in your browser
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/watchiru.git
+```
 
-## 📁 Project Structure
+2. Open `index.html` in your browser
 
-Watchiru/
-├── index.html
-├── watch.html
-├── styles.css
-├── watch.css
-├── watch.js
-├── logo.png
-└── vid/
-    ├── S1 - 01.mp4
-    ├── S1 - 02.mp4
-    └── ...
+## 📱 Responsive Design
 
-## 🛠️ Technologies Used
+- ✅ Desktop (1920px+)
+- ✅ Laptop (1366px)
+- ✅ Tablet (768px)
+- ✅ Mobile (320px+)
 
-- HTML5
-- CSS3
-- JavaScript
-- Font Awesome Icons
-- Google Fonts (Poppins)
+## 🎯 Features in Detail
 
-## 📝 Features Explained
+### 🏠 Home Page
+- Hero section with featured anime
+- Popular anime carousel
+- Upcoming releases section
 
-### Video Player
-- Custom HTML5 video player
-- Episode switching functionality
-- Progress tracking
-- Quality control
+### 🔍 Browse
+- Advanced filtering system
+- Genre categories
+- Year selection
+- Dynamic search
 
-### Content Display
-- Detailed anime information
-- Episode list with grid layout
-- Recommendations section
-- Responsive design
+### 📺 Video Player
+- Custom controls
+- Episode navigation
+- Quality selection
+- Auto-next episode
 
-## 🎨 UI Components
+### 🌟 New & Popular
+- Trending now section
+- Coming soon
+- Top rated
+- This season's anime
 
-- 🎥 Video player
-- 📺 Episode grid
-- 📊 Anime details
-- 📱 Mobile-responsive layout
-- 🎯 Easy navigation
+## 🎨 UI/UX Features
 
-## 🌐 Browser Support
+- 🌙 Modern dark theme
+- ⚡ Smooth transitions
+- 💫 Loading animations
+- 🎭 Hover effects
+- 📱 Mobile-first approach
 
-- ✅ Chrome
-- ✅ Firefox
-- ✅ Safari
-- ✅ Edge
-- ✅ Opera
-
-## 📱 Mobile Support
-
-- ✅ iOS Safari
-- ✅ Android Chrome
-- ✅ Mobile Firefox
-- ✅ Mobile Edge
-
-## 🔧 Configuration
-
-No additional configuration required. Just add your video files to the `vid` folder.
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 📜 License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-## 👥 Authors
-
-- **Wiktor Dłużniewski** - *Initial work*
-
-## 🙏 Acknowledgments
-
-- Inspired by modern streaming platforms
-- Icons from Font Awesome
-- Fonts from Google Fonts
-
-## 📸 Screenshots
-
-
-
-## 🔮 Future Features
+## 🔮 Upcoming Features
 
 - [ ] User authentication
-- [ ] Watchlist functionality
+- [ ] Personal watchlist
 - [ ] Progress tracking
-- [ ] Comments section
 - [ ] Rating system
+- [ ] Comments section
 
-## ⚠️ Note
+## ⚠️ Legal Notice
 
-This is a demo project and not intended for commercial use. Please ensure you have the rights to any content you stream.
+This project is protected under a proprietary license. All rights reserved.
+
+- ❌ No reproduction or distribution permitted
+- ❌ No modifications allowed
+- ❌ No commercial or personal use without explicit permission
+- ❌ No derivative works
+
+**WARNING:** Unauthorized use, modification, or distribution of this code is strictly prohibited and will result in legal action. Contact the author for usage permissions.
+
+## 👨‍💻 Author
+
+**Wiktor Dłużniewski**
+- GitHub: [@wermis1]
+- Contact: wiktordluzniewski@gmail.com
 
 ---
-Made with ❤️ by [wermis]
+<p align="center">Made with ❤️ and ☕ by Wiktor</p>
 ```
 

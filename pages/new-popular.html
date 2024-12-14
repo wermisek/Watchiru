@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New & Popular - Watchiru</title>
+    <link rel="icon" type="image/png" href="../assets/output.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/new-popular.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="../index.html" class="logo">Watchiru</a>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="browse.html">Browse</a>
+                    <a href="new-popular.html" class="active">New & Popular</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="header-search-container">
+                    <input type="text" id="headerSearchInput" placeholder="Search anime...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <i class="fas fa-bell"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="new-popular-container">
+        <section class="trending-section section">
+            <h2>Trending Now <i class="fas fa-fire"></i></h2>
+            <div class="anime-grid trending-grid"></div>
+        </section>
+
+        <section class="upcoming-section section">
+            <h2>Coming Soon <i class="fas fa-calendar"></i></h2>
+            <div class="anime-grid upcoming-grid"></div>
+        </section>
+
+        <section class="top-rated-section section">
+            <h2>Top Rated <i class="fas fa-star"></i></h2>
+            <div class="anime-grid top-rated-grid"></div>
+        </section>
+
+        <section class="seasonal-section section">
+            <h2>This Season <i class="fas fa-leaf"></i></h2>
+            <div class="anime-grid seasonal-grid"></div>
+        </section>
+    </main>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/new-popular.js"></script>
+</body>
+</html> 

@@ -1,0 +1,276 @@
+.browse-container {
+    padding: 2rem;
+    padding-top: calc(var(--header-height) + 2rem);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.browse-header {
+    margin-bottom: 2rem;
+}
+
+.browse-header h1 {
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    padding-right: 2.5rem;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.15);
+}
+
+.search-bar i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.anime-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+}
+
+.anime-card img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
+
+.anime-info {
+    padding: 1rem;
+}
+
+.anime-info h3 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.anime-meta {
+    display: flex;
+    gap: 1rem;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.current-page {
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .browse-container {
+        padding: 1rem;
+    }
+
+    .anime-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
+
+.error, .no-results {
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    grid-column: 1 / -1;
+}
+
+.error {
+    color: #ff6b6b;
+}
+
+.header-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header-search-container input {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    color: white;
+    width: 200px;
+    transition: width 0.3s;
+}
+
+.header-search-container input:focus {
+    width: 300px;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+}
+
+.header-search-container i {
+    position: absolute;
+    right: 0.75rem;
+    color: #aaa;
+    cursor: pointer;
+} 
+
+/* Add these animation styles */
+@keyframes searchPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes searchSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading state for search icon */
+.search-bar i.loading {
+    animation: searchSpin 1s linear infinite;
+    color: var(--primary-color);
+}
+
+/* Results animation */
+.anime-card {
+    animation: fadeInUp 0.3s ease-out;
+    animation-fill-mode: both;
+}
+
+/* Stagger the animations */
+.anime-card:nth-child(1) { animation-delay: 0.1s; }
+.anime-card:nth-child(2) { animation-delay: 0.15s; }
+.anime-card:nth-child(3) { animation-delay: 0.2s; }
+.anime-card:nth-child(4) { animation-delay: 0.25s; }
+/* ... and so on */
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.skeleton {
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.1) 37%,
+        rgba(255, 255, 255, 0.05) 63%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+}
+
+/* Loading placeholder styles */
+.loading-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.loading-card {
+    aspect-ratio: 2/3;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Message animations */
+.no-results, .error {
+    animation: fadeInUp 0.3s ease-out;
+    text-align: center;
+    padding: 2rem;
+    color: var(--text);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.error {
+    color: #ff6b6b;
+    border: 1px solid rgba(255,107,107,0.2);
+} 

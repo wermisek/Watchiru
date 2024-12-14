@@ -6,7 +6,8 @@
     <title>Watchiru - Your Anime Destination</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/output.png">
 </head>
 <body>
     <header>
@@ -15,16 +16,16 @@
                 <div class="logo">Watchiru</div>
                 <div class="nav-links">
                     <a href="index.html" class="active">Home</a>
-                    <a href="browse.html">Browse</a>
-                    <a href="#">New & Popular</a>
+                    <a href="pages/browse.html">Browse</a>
+                    <a href="pages/new-popular.html">New & Popular</a>
                 </div>
             </div>
             <div class="nav-right">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-bell"></i>
-                <div class="user-profile">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='white'><circle cx='12' cy='12' r='12'/></svg>" alt="Profile">
+                <div class="header-search-container">
+                    <input type="text" id="headerSearchInput" placeholder="Search anime...">
+                    <i class="fas fa-search"></i>
                 </div>
+                <i class="fas fa-bell"></i>
             </div>
         </nav>
     </header>
@@ -35,38 +36,25 @@
             <h1>Attack on Titan - Shingeki no Kyojin</h1>
             <p class="hero-description">Follow Eren's desperate battle as he fights to protect humanity from man-eating Titans and uncover the truth behind the walls that imprison them.</p>
             <div class="hero-buttons">
-                <button class="play-btn" onclick="window.location.href='watch.html?anime=attack-on-titan'"><i class="fas fa-play" ></i> Play</button>
+                <button class="play-btn" onclick="window.location.href='pages/watch.html?anime=attack-on-titan'"><i class="fas fa-play" ></i> Play</button>
                 <button class="more-info-btn"><i class="fas fa-info-circle"></i> More Info</button>
             </div>
         </div>
     </div>
 
-<div class="category-pills">
-    <div class="category-pill active">All</div>
-    <div class="category-pill">Shonen</div>
-    <div class="category-pill">Slice of Life</div>
-    <div class="category-pill">Mecha</div>
-    <div class="category-pill">Romance</div>
-    <div class="category-pill">Horror</div>
-    <div class="category-pill">Isekai</div>
-</div>
-
-<div class="movies-row">
-    <div class="row-header">
-        <h2>Popular Animes</h2>
+    <div class="movies-row">
+        <div class="row-header">
+            <h2>Popular Animes</h2>
+        </div>
+        <div class="movies-slider popular-animes"></div>
     </div>
-    <div class="movies-slider popular-animes"></div>
-</div>
 
-<div class="movies-row">
-    <div class="row-header">
-        <h2>Incoming Animes</h2>
+    <div class="movies-row">
+        <div class="row-header">
+            <h2>Incoming Animes</h2>
+        </div>
+        <div class="movies-slider incoming-animes"></div>
     </div>
-    <div class="movies-slider incoming-animes"></div>
-</div>
-
-        
-    </main>
 
     <footer>
         <div class="footer-content">
@@ -100,7 +88,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/script.js"></script>
     <script>
         window.onscroll = function() {
             const header = document.querySelector('header');
