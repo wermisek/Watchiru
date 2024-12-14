@@ -25,29 +25,38 @@ A modern anime streaming platform with a sleek interface and smooth user experie
 
 ```
 Watchiru/
-├── 📄 index.html          # Home page
-├── 📄 browse.html         # Browse anime page
-├── 📄 watch.html          # Video player page
-├── 📄 new-popular.html    # Trending & upcoming anime
-├── 📄 search.html         # Search results page
-├── 🎨 styles.css          # Global styles
-├── 🎨 browse.css          # Browse page styles
-├── 🎨 watch.css           # Video player styles
-├── 🎨 new-popular.css     # New & Popular styles
-├── 🎨 search.css          # Search page styles
-├── 📜 script.js           # Main JavaScript
-├── 📜 watch.js           # Video player logic
-├── 📜 browse.js          # Browse functionality
-├── 📜 new-popular.js     # New & Popular logic
-├── 📜 search.js          # Search functionality
-└── 🖼️ assets/            # Images and icons
+├── assets/
+│   └── 🖼️ output.png
+├── css/
+│   ├── 🎨 styles.css
+│   ├── 🎨 browse.css
+│   ├── 🎨 watch.css
+│   └── 🎨 new-popular.css
+├── js/
+│   ├── 📜 script.js
+│   ├── 📜 header.js
+│   ├── 📜 browse.js
+│   └── 📜 watch.js
+├── pages/
+│   ├── 📄 404.html
+│   ├── 📄 browse.html
+│   ├── 📄 new-popular.html
+│   └── 📄 watch.html
+├── data/
+│   └── 📦 animeDatabase.js
+├── utils/
+│   ├── ⚙️ apiIntegration.js
+│   └── ⚙️ pageGenerator.js
+├── 📄 index.html
+├── ⚙️ vercel.json
+└── 📜 LICENSE.md
 ```
 
 ## 🚀 Getting Started
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/watchiru.git
+git clone https://github.com/wermisek/watchiru.git
 ```
 
 2. Open `index.html` in your browser
@@ -114,7 +123,7 @@ This project is protected under a proprietary license. All rights reserved.
 ## 👨‍💻 Author
 
 **Wiktor Dłużniewski**
-- GitHub: [@wermis1]
+- GitHub: [@wermisek]
 - Contact: wiktordluzniewski@gmail.com
 
 ---
