@@ -4,7 +4,8 @@
     { "source": "/assets/:path*", "destination": "/assets/:path*" },
     { "source": "/css/:path*", "destination": "/css/:path*" },
     { "source": "/js/:path*", "destination": "/js/:path*" },
-    { "source": "/pages/:path*", "destination": "/pages/:path*" }
+    { "source": "/pages/:path*", "destination": "/pages/:path*" },
+    { "source": "/:path((?!pages|assets|css|js).*)", "destination": "/pages/404.html" }
   ],
   "headers": [
     {
@@ -27,6 +28,5 @@
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "errorDocument": "/pages/404.html"
+  "trailingSlash": false
 } 
