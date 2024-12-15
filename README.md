@@ -29,18 +29,30 @@ Watchiru/
 │   └── 🖼️ output.png
 ├── css/
 │   ├── 🎨 styles.css
+│   ├── 🎨 hero.css
 │   ├── 🎨 browse.css
-│   ├── 🎨 watch.css
-│   └── 🎨 new-popular.css
+│   ├── 🎨 new-popular.css
+│   └── 🎨 watch.css
 ├── js/
-│   ├── 📜 script.js
 │   ├── 📜 header.js
+│   ├── 📜 script.js
+│   ├── 📜 watch.js
 │   ├── 📜 browse.js
-│   └── 📜 watch.js
+│   └── 📜 new-popular.js
 ├── pages/
 │   ├── 📄 404.html
+│   ├── 📄 about.html
 │   ├── 📄 browse.html
+│   ├── 📄 community.html
+│   ├── 📄 contact.html
+│   ├── 📄 cookies.html
+│   ├── 📄 copyright.html
+│   ├── 📄 disclaimer.html
+│   ├── 📄 dmca.html
+│   ├── 📄 help.html
 │   ├── 📄 new-popular.html
+│   ├── 📄 privacy.html
+│   ├── 📄 terms.html
 │   └── 📄 watch.html
 ├── data/
 │   └── 📦 animeDatabase.js
