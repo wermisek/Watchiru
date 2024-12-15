@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Watchiru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="../assets/output.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logo">Watchiru</div>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="browse.html">Browse</a>
+                    <a href="new-popular.html">New & Popular</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="header-search-container">
+                    <input type="text" id="headerSearchInput" placeholder="Search anime...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="notification-icon has-notifications">
+                    <i class="fas fa-bell"></i>
+                    <div class="notification-indicator"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="maintenance-page">
+        <div class="container">
+            <div class="maintenance-content">
+                <i class="fas fa-tools maintenance-icon"></i>
+                <h1>Under Construction</h1>
+                <p class="maintenance-message">We're currently working on making our contact system even better!</p>
+                <div class="maintenance-details">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <p>65% Complete</p>
+                    </div>
+                    <div class="eta">
+                        <i class="far fa-clock"></i>
+                        <span>Estimated completion: March 2025</span>
+                    </div>
+                </div>
+                <div class="temp-contact">
+                    <h2>Temporary Contact Methods</h2>
+                    <div class="contact-methods">
+                        <a href="mailto:support@watchiru.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@watchiru.com</span>
+                        </a>
+                        <a href="https://discord.gg/watchiru" target="_blank" class="contact-method">
+                            <i class="fab fa-discord"></i>
+                            <span>Join our Discord</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="../index.html" class="back-home">
+                    <i class="fas fa-arrow-left"></i>
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Watchiru</h3>
+                <p>Your premier destination for anime streaming</p>
+                <div class="social-links">
+                    <a href="https://twitter.com/watchiru" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/watchiru" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/watchiru" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/watchiru" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="help.html">Help Center</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="dmca.html">DMCA</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="copyright.html">Copyright</a>
+                <a href="cookies.html">Cookie Policy</a>
+                <a href="community.html">Community Guidelines</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Watchiru. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .maintenance-page {
+            padding: 120px 5% 60px;
+            min-height: calc(100vh - 400px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .maintenance-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .maintenance-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            animation: wrench 3s ease-in-out infinite;
+        }
+
+        .maintenance-content h1 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .maintenance-message {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .maintenance-details {
+            margin-bottom: 2rem;
+        }
+
+        .progress-container {
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--gradient-1);
+            border-radius: 4px;
+            animation: progressAnimation 2s ease-out;
+        }
+
+        .eta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .temp-contact {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .temp-contact h2 {
+            color: var(--text);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .contact-method i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @keyframes wrench {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+
+        @keyframes progressAnimation {
+            from { width: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-page {
+                padding: 100px 20px 40px;
+            }
+
+            .maintenance-content {
+                padding: 2rem;
+            }
+
+            .maintenance-content h1 {
+                font-size: 2rem;
+            }
+
+            .maintenance-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script src="../js/header.js"></script>
+</body>
+</html> 

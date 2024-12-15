@@ -34,12 +34,14 @@ function displayAnimeList(animeList, containerSelector) {
         index === self.findIndex((a) => a.mal_id === anime.mal_id)
     );
 
-    container.innerHTML = uniqueAnimes.map(anime => `
+    // Initially show only first 8 items
+    const initialAnimes = uniqueAnimes.slice(0, 8);
+    
+    // Create the container for anime items
+    container.innerHTML = initialAnimes.map(anime => `
         <div class="movie-item" 
              onclick="window.location.href='pages/watch.html?anime=${anime.mal_id}&ep=1'"
-             style="background-image: url('${anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url}'); 
-                    background-size: cover; 
-                    background-position: center;">
+             style="background-image: url('${anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url}');">
             <div class="movie-info">
                 <h3>${anime.title}</h3>
                 <div class="meta-info">
@@ -57,6 +59,92 @@ function displayAnimeList(animeList, containerSelector) {
             </div>
         </div>
     `).join('');
+
+    // Add see more button if there are more than 8 items
+    if (uniqueAnimes.length > 8) {
+        const seeMoreBtn = document.createElement('button');
+        seeMoreBtn.className = 'see-more-btn';
+        seeMoreBtn.innerHTML = `
+            See More
+            <i class="fas fa-chevron-down"></i>
+        `;
+        
+        seeMoreBtn.addEventListener('click', function() {
+            const slider = container;
+            const isExpanded = slider.classList.contains('expanded');
+            
+            if (isExpanded) {
+                // Show only first 8 items when collapsing
+                slider.innerHTML = initialAnimes.map(anime => `
+                    <div class="movie-item" 
+                         onclick="window.location.href='pages/watch.html?anime=${anime.mal_id}&ep=1'"
+                         style="background-image: url('${anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url}');">
+                        <div class="movie-info">
+                            <h3>${anime.title}</h3>
+                            <div class="meta-info">
+                                <span>${anime.type || 'TV'}</span>
+                                <span>${anime.score ? `★ ${anime.score}` : ''}</span>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="play-small" onclick="event.stopPropagation()">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="add-to-list" onclick="event.stopPropagation()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                slider.classList.remove('expanded');
+                this.innerHTML = `
+                    See More
+                    <i class="fas fa-chevron-down"></i>
+                `;
+                // Smooth scroll to the section when collapsing
+                slider.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                // Show all items when expanding with animation delays
+                slider.innerHTML = uniqueAnimes.map((anime, index) => `
+                    <div class="movie-item" 
+                         onclick="window.location.href='pages/watch.html?anime=${anime.mal_id}&ep=1'"
+                         style="--item-index: ${index}; background-image: url('${anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url}');">
+                        <div class="movie-info">
+                            <h3>${anime.title}</h3>
+                            <div class="meta-info">
+                                <span>${anime.type || 'TV'}</span>
+                                <span>${anime.score ? `★ ${anime.score}` : ''}</span>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="play-small" onclick="event.stopPropagation()">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="add-to-list" onclick="event.stopPropagation()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Force a reflow before adding the expanded class
+                slider.offsetHeight;
+                
+                // Add expanded class to trigger animations
+                slider.classList.add('expanded');
+                
+                this.innerHTML = `
+                    See Less
+                    <i class="fas fa-chevron-up"></i>
+                `;
+            }
+            
+            this.classList.toggle('expanded');
+        });
+        
+        // Insert the button after the slider
+        container.parentElement.insertBefore(seeMoreBtn, container.nextSibling);
+    }
 }
 
 // Initial population of static movies
@@ -90,10 +178,10 @@ function populateStaticMovies() {
 // Fetch anime data
 async function fetchAnimeData() {
     try {
-        // Add delay between requests to respect API rate limits
-        const popularResponse = await fetch('https://api.jikan.moe/v4/top/anime?limit=10&filter=airing&sfw=true&order_by=score');
+        // Fetch 25 animes for each section
+        const popularResponse = await fetch('https://api.jikan.moe/v4/top/anime?limit=25&filter=airing&sfw=true&order_by=score');
         await new Promise(resolve => setTimeout(resolve, 1000)); // 1 second delay
-        const upcomingResponse = await fetch('https://api.jikan.moe/v4/top/anime?limit=10&filter=upcoming&sfw=true');
+        const upcomingResponse = await fetch('https://api.jikan.moe/v4/top/anime?limit=25&filter=upcoming&sfw=true');
 
         const popularData = await popularResponse.json();
         const upcomingData = await upcomingResponse.json();
@@ -105,14 +193,14 @@ async function fetchAnimeData() {
         // Clear and update popular anime section
         if (popularContainer) {
             popularContainer.innerHTML = '';
-            const popularAnimes = (popularData?.data || []).slice(0, 10);
+            const popularAnimes = (popularData?.data || []).slice(0, 25); // Get 25 animes
             displayAnimeList(popularAnimes, '.popular-animes');
         }
 
         // Clear and update incoming anime section
         if (incomingContainer) {
             incomingContainer.innerHTML = '';
-            const incomingAnimes = (upcomingData?.data || []).slice(0, 10);
+            const incomingAnimes = (upcomingData?.data || []).slice(0, 25); // Get 25 animes
             displayAnimeList(incomingAnimes, '.incoming-animes');
         }
 
